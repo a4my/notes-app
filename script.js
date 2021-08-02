@@ -1,11 +1,13 @@
 const addBtn = document.getElementById('add')
 
+// Getting notes from LS
 const notes = JSON.parse(localStorage.getItem('notes'))
 
 if(notes) {
     notes.forEach(note => addNewNote(note))
 }
 
+// Creating a new note
 addBtn.addEventListener('click', () => addNewNote())
 
 function addNewNote(text = '') {
@@ -51,6 +53,7 @@ function addNewNote(text = '') {
     document.body.appendChild(note)
 }
 
+// Local storage
 function updateLS() {
     const notesText = document.querySelectorAll('textarea')
 
